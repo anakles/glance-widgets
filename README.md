@@ -2,6 +2,9 @@
 
 This is a collection of custom widgets for https://github.com/glanceapp.
 
+- [paperless-ngx](https://github.com/anakles/glance-widgets?tab=readme-ov-file#paperless-ngx)
+- 
+
 ---
 
 ## Paperless-ngx
@@ -12,7 +15,7 @@ A widget for [paperless-ngx](https://docs.paperless-ngx.com/).
 
 **Usage**
 
-Copy the content of the file [`paperless-ngx.yaml`]() at the position you like.
+Copy the content of the file [`paperless-ngx.yaml`](paperless-ngx/paperless-ngx.yaml) at the position you like.
 
 |Parameter|Value|Example|
 |---|---|---|
