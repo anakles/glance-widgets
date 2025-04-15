@@ -1,0 +1,18 @@
+- type: custom-api
+  title: paperless-ngx stats
+  cache: 1d
+  url: ${PAPERLESS_URL}/api/statistics/?format=json
+  headers:
+    Authorization: Token ${PAPERLESS_TOKEN}
+    Accept: application/json
+  template: |
+    <div class="flex justify-between text-center">
+      <div>
+          <div class="color-highlight size-h3">{{ .JSON.Int "documents_total" | formatNumber }}</div>
+          <div class="size-h6">DOCUMENTS</div>
+      </div>
+      <div>
+          <div class="color-highlight size-h3">{{ .JSON.Int "documents_inbox" | formatNumber }}</div>
+          <div class="size-h6">INBOX</div>
+      </div>
+    </div>
