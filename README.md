@@ -25,7 +25,7 @@ Copy the content of the file [`paperless-ngx.yaml`](paperless-ngx/paperless-ngx.
 The widgets requires two variables, which can be configured in
 If you are using an `.env` file, add these lines:
 
-```
+```bash
 # The URL to paperless-ngx
 PAPERLESS_URL=https://paperless.example.com
 # The API token for paperless-ngx
