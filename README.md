@@ -3,7 +3,8 @@
 This is a collection of custom widgets for https://github.com/glanceapp.
 
 - [paperless-ngx](https://github.com/anakles/glance-widgets?tab=readme-ov-file#paperless-ngx)
-- 
+- [portainer](#portainer)
+
 
 ---
 
