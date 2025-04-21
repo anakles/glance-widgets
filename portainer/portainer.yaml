@@ -1,0 +1,33 @@
+- type: custom-api
+  title: Portainer stats
+  cache: 1d
+  url: ${PORTAINER_URL}/api/endpoints/${PORTAINER_ENV}/docker/containers/json?all=true
+  headers:
+    Accept: application/json
+    X-API-Key: ${PORTAINER_API_KEY}
+  template: |
+    {{ $total := len (.JSON.Array "") }}
+    {{ $running := 0 }}
+    {{ $stopped := 0 }}
+    {{ range $item := .JSON.Array "" }}
+      {{ if eq ($item.String "State") "running" }}
+        {{ $running = add $running 1 }}
+      {{ end }}
+      {{ if or (eq ($item.String "State") "stopped") (eq ($item.String "State") "exited") }}
+        {{ $stopped = add $stopped 1 }}
+      {{ end }}
+    {{ end }}
+    <div class="flex justify-between text-center">
+      <div>
+          <div class="color-highlight size-h3">{{ $total }}</div>
+          <div class="size-h6">TOTAL</div>
+      </div>
+      <div>
+          <div class="color-highlight size-h3">{{ $running }}</div>
+          <div class="size-h6">RUNNING</div>
+      </div>
+      <div>
+          <div class="color-highlight size-h3">{{ $stopped }}</div>
+          <div class="size-h6">STOPPED</div>
+      </div>
+    </div>
